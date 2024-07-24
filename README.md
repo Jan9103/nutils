@@ -1,15 +1,18 @@
 # NUshell UTILS
 
-Utility functions for nushell, which im to lazy to reimplement for
-every single script i write.
+Utility functions for nushell, which im to lazy to reimplement for every single script i write.
+
+Things might get added to nushell or the official stdlib at some point (or get easier), but
+for backward-compatability reasons ill keep them in here for a while.
 
 ## Functions
 
 ### List
 
-* `nutils list index_of <value>`-codes
-* `nutils list indexes_of <value>`-codes
-* `nutils list to_record`-codes
+* `nutils list index_of <value>`
+* `nutils list indexes_of <value>`
+* `nutils list to_record`
+* `nutils list kv_to_record <key_column_name> <value_column_name>`
 
 ### Record
 
