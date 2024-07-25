@@ -38,3 +38,8 @@ adds parsed versions of common commands
 ### HTML
 
 * `nutils html escape` escapes characters with special meaning in html using `&`-codes
+
+### Progress
+
+* `nutils progress bar_each <cmd> (width) (ansi)` `each` with an added progress bar
+* `nutils progress bar_with_count <done> <total> (width) (ansi)` generate a progress-bar
