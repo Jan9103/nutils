@@ -18,6 +18,10 @@ for backward-compatability reasons ill keep them in here for a while.
 
 * `nutils record field_to_int <cell-path>` converts a fields value to integer
 
+### Path
+
+* `nutils path list_pardirs` generates a list of all parent directories
+
 ### Compat
 
 compatability layer for programs
