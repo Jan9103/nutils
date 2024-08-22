@@ -6,8 +6,8 @@
 # (nutils html escape "<foo>") == "&lt;foo&gt;"
 export def escape [text?: string] {
   (if $text == null {$in} else {$text})
-  | str replace "&" "&amp;"
-  | str replace "<" "&lt;"
-  | str replace ">" "&gt;"
-  | str replace '"' "&quot;"
+  | str replace -a "&" "&amp;"
+  | str replace -a "<" "&lt;"
+  | str replace -a ">" "&gt;"
+  | str replace -a '"' "&quot;"
 }
