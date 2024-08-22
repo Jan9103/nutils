@@ -3,7 +3,7 @@
 # [0 3]
 # > [a b c a] | indexes-of d
 # []
-export def indexes_of [thing_to_index: any]: list -> list {
+export def indexes_of [thing_to_index: any]: list -> list<int> {
   $in
   | enumerate
   | where item == $thing_to_index
@@ -21,13 +21,13 @@ export def index_of [thing_to_index: any]: list -> any {
 
 # > [[a 1] [b 2]] | nutils list to_record
 # {a: 1, b: 2}
-export def to_record []: list -> record {
+export def to_record []: list<list> -> record {
   $in | reduce -f {} {|it,acc| $acc | upsert $it.0 $it.1?}
 }
 
 # > [{key: a, value: 1}, {key: b, value: 2}] | nutils list kv_to_record "key" "value"
 # {a: 1, b: 2}
-export def kv_to_record [key_column: string, value_column: string]: list -> record {
+export def kv_to_record [key_column: string, value_column: string]: list<record> -> record {
   $in | reduce -f {} {|it,acc| $acc | upsert ($it | get $key_column) ($it | get -i $value_column)}
 }
 
