@@ -41,3 +41,16 @@ export def first_matching [predicate]: list -> any {
   }
   return null
 }
+
+# inject a item into a list at index
+# example:
+#  ([0 1 2] | inject 0 hi) == [hi 0 1 2]
+#  ([0 1 2] | inject 1 hi) == [0 hi 1 2]
+export def inject [index: int, item: any]: list -> list {
+  let input_list = ($in)
+  return [
+    ...($input_list | first $index)
+    $item
+    ...($input_list | last (($input_list | length) - $index))
+  ]
+}

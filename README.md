@@ -13,6 +13,7 @@ for backward-compatability reasons ill keep them in here for a while.
 * `nutils list indexes_of <value>`
 * `nutils list to_record`
 * `nutils list kv_to_record <key_column_name> <value_column_name>`
+* `nutils list inject <index> <item>`
 
 ### Record
 
