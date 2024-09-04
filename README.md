@@ -22,6 +22,7 @@ Module     | Command                         | Description / Example
 `list`     | `kt_to_record <key_column_name> <value_column_name>` | the inverse of `transpose` (`[{key: a, value: b}] \| kt_to_record key value` -\> `{a: b}`)
 `list`     | `to_record`                     | `[[a, b], [c, d]]` -\> `{a: b, c: d}`
 `parsed`   | `rg <regex> <files>`            | get `rg` (aka `ripgrep`) results as a nu table
+`path`     | `find_in_parents <name>`        | find out where (or `null`) something is in the path above (for example: find git-project root)
 `path`     | `list_pardirs`                  | list parent directories (`"/home/bob"` -\> `["/", "/home", "/home/bob"]`)
 `progress` | `bar_each <cmd> (width) (ansi)` | `each`, but with a progress bar
 `progress` | `bar_with_count <done> <total> (width) (ansi)` | generate a progress bar ascii/ansi-art
