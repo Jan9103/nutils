@@ -28,5 +28,6 @@ Module     | Command                         | Description / Example
 `progress` | `bar_with_count <done> <total> (width) (ansi)` | generate a progress bar ascii/ansi-art
 `record`   | `field_to_int <cell-path>`      | convert a fields value to a int (`{a: "1"} \| field_to_int a` -\> `{a: 1}`)
 `shutil`   | `nu_c`                          | convert a code-block to `nu -c "CODE"` syntax
+`shutil`   | `run_with_retry <closure>`      | re-run a closure until it no longer fails (useful for web-requests, etc)
 
 A more complete syntax can be found at `[COMMAND] --help`
