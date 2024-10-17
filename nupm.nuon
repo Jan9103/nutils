@@ -1,6 +1,6 @@
 {
   name: "nutils"
-  version: "1.0.0"
+  version: "1.0.1"
   description: "Utility functions for speeding up writing nu scripts"
   maintainers: ["@jan9103"]
   license: "https://github.com/jan9103/nutils/blob/main/LICENSE"
