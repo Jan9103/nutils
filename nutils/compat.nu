@@ -4,11 +4,7 @@ export def is_installed [program: string]: nothing -> bool {
 
 # returns the first instance of the binary it can find in $env.PATH or null
 export def find_binary_in_path [name: string]: nothing -> string {
-  for i in $env.PATH {
-    let tmp = $"($i)/($name)"
-    if ($tmp | path exists) {return $tmp}
-  }
-  return null
+  which $name | where type == "external" | get -i 0.path
 }
 
 const sudo_options = [
@@ -25,7 +21,7 @@ const sudo_options = [
 # only supports basic usages (`compat sudo pkill nginx`) and not
 # any of the fancy arguments like `-e`
 export def sudo [...args: string]: nothing -> any {
-  use list.nu first_matching
+  use ./list.nu first_matching
   let option = ( $sudo_options | first_matching {|it| is_installed ($it | split row " " -n 2 | get 0) } )
   if $option == null {
     error make {
